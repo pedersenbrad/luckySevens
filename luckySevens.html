@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lucky Sevens Game</title>
+    <script type="text/JavaScript" src="luckySevens.js"></script>
+
+    <style>
+      h1, h2 {
+        text-align: center;
+      }
+      table {
+        margin: auto;
+        border-collapse: collapse;
+        width: 30%;
+      }
+      table, th, td {
+        border: 1px solid black;
+      }
+      tr:nth-child(odd) {
+        background-color: #ccc;
+      }
+      .currencyinput {
+        border: 2px inset #ccc;
+      }
+      .currencyinput input {
+        border: 0px;
+      }
+      #results {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Lucky Sevens</h1>
+    </header>
+
+    <form style="text-align:center;" name="playerInputs" onsubmit="return playGame()">
+      <label for="bet">Starting Bet: </label><span class="currencyinput">$<input type="text" id="bet" name="bet" placeholder="0.00"></span>
+      <br />
+      <br />
+      <button class="btn" type="submit" id="submitButton">Play</button>
+    </form>
+
+    <div id="results" style="display:none;">
+      <hr width="35%" />
+      <h2>Results</h2>
+      <table class="table">
+          <tbody>
+              <tr>
+                  <td>Starting Bet</td>
+                  <td>$<span id="oBet"></span></td>
+                </tr>
+                <tr>
+                  <td>Total Rolls Before Going Broke</td>
+                  <td id="rounds"></td>
+                </tr>
+                <tr>
+                  <td>Highest Amount Won</td>
+                  <td>$<span id="highWinnings"></span></td>
+                </tr>
+                <tr>
+                  <td>Roll Count at Highest Amount Won</td>
+                  <td id="rollWinnings"></td>
+                </tr>
+              </tbody>
+      </table>
+      <button onClick="window.location.reload();">Play Again</button>
+    </div>
+  </body>
+</html>
