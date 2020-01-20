@@ -13,11 +13,11 @@ function playGame() {
   var dice1 = 0;
   var dice2 = 0;
 
-  if (Number(bet) <= 0) {
+  if (Number(bet) <= 0 || isNaN(bet)) {
       alert("Please enter a number greater than zero.");
-      document.forms["playerInputs"]["bet"].focus();
       return false;
   }
+
   while (winnings > 0) {
     dice1 = rollDice();
     dice2 = rollDice();
